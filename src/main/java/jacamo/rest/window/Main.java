@@ -1,8 +1,5 @@
 package jacamo.rest.window;
 
-
-
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +19,6 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -44,6 +40,7 @@ public class Main extends Application {
     @FXML private TextField text_field_sender;
     @FXML private TextField text_field_receiver;
     @FXML private TextField text_field_content;
+    @FXML private TextField text_field_find;
     @FXML private TextArea text_area_console;
     @FXML private TextArea text_area_plans;
     @FXML private Button button_overview;
@@ -58,6 +55,7 @@ public class Main extends Application {
     @FXML private Button button_send_mailbox;
     @FXML private Button button_send_plans;
     @FXML private Button button_send_command;
+    @FXML private Button button_find;
 
 
     static boolean uriSet = false;
@@ -78,6 +76,20 @@ public class Main extends Application {
 
     public void clearConsole(ActionEvent actionEvent) {
         this.text_area_console.clear();
+    }
+
+    public void find(ActionEvent actionEvent) {
+
+        if (this.text_field_find.getText() != null && !this.text_field_find.getText().isEmpty()) {
+            int index = this.text_area_console.getText().indexOf(this.text_field_find.getText());
+            if (index == -1) {
+                this.text_area_console.appendText("Find key Not in the text");
+            } else {
+                this.text_area_console.selectRange(index, index +  this.text_field_find.getLength());
+            }
+        } else {
+            this.text_area_console.appendText("Missing find key");
+        }
     }
 
     public void setIPandPort(ActionEvent actionEvent) throws java.net.ConnectException {

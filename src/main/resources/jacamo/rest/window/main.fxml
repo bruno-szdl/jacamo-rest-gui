@@ -4,15 +4,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="698.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jacamo.rest.window.Main">
+<AnchorPane prefHeight="698.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jacamo.rest.window.Main">
    <children>
       <Label fx:id="label_id" layoutX="14.0" layoutY="14.0" text="IP:" />
       <TextField fx:id="text_field_ip" layoutX="34.0" layoutY="10.0" prefHeight="25.0" prefWidth="93.0" promptText="127.0.1.1" />
       <Label layoutX="134.0" layoutY="14.0" text="Port:" />
       <TextField fx:id="text_field_port" layoutX="165.0" layoutY="10.0" prefHeight="25.0" prefWidth="56.0" promptText="8080" />
       <Button fx:id="button_set_ip_and_port" layoutX="229.0" layoutY="10.0" mnemonicParsing="false" onAction="#setIPandPort" text="Set URI" />
-      <Button fx:id="button_clear_console" layoutX="653.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearConsole" prefHeight="25.0" prefWidth="93.0" text="Clear Console" />
-      <TextArea fx:id="text_area_console" layoutX="395.0" layoutY="40.0" prefHeight="648.0" prefWidth="351.0" />
+      <Button fx:id="button_clear_console" layoutX="711.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearConsole" prefHeight="25.0" prefWidth="93.0" text="Clear Console" />
+      <TextArea fx:id="text_area_console" layoutX="395.0" layoutY="40.0" prefHeight="574.0" prefWidth="412.0" />
       <Label fx:id="label_output" layoutX="395.0" layoutY="14.0" text="Output:" />
       <Label fx:id="label_overview" layoutX="14.0" layoutY="56.0" text="Overview">
          <font>
@@ -74,5 +74,7 @@
       <Button fx:id="button_send_plans" layoutX="315.0" layoutY="581.0" mnemonicParsing="false" onAction="#postPlan" prefHeight="25.0" prefWidth="51.0" text="Send" />
       <TextField fx:id="text_field_command" layoutX="140.0" layoutY="622.0" prefHeight="25.0" prefWidth="227.0" />
       <Button fx:id="button_send_command" layoutX="316.0" layoutY="647.0" mnemonicParsing="false" onAction="#postCommand" prefHeight="25.0" prefWidth="51.0" text="Send" />
+      <Button fx:id="button_find" layoutX="756.0" layoutY="622.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" onAction="#find" text="Find" />
+      <TextField fx:id="text_field_find" layoutX="395.0" layoutY="622.0" prefHeight="25.0" prefWidth="354.0" />
    </children>
 </AnchorPane>
