@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="698.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jacamo.rest.window.Main">
+   <children>
+      <Label fx:id="label_id" layoutX="14.0" layoutY="14.0" text="IP:" />
+      <TextField fx:id="text_field_ip" layoutX="34.0" layoutY="10.0" prefHeight="25.0" prefWidth="93.0" promptText="127.0.1.1" />
+      <Label layoutX="134.0" layoutY="14.0" text="Port:" />
+      <TextField fx:id="text_field_port" layoutX="165.0" layoutY="10.0" prefHeight="25.0" prefWidth="56.0" promptText="8080" />
+      <Button fx:id="button_set_ip_and_port" layoutX="229.0" layoutY="10.0" mnemonicParsing="false" onAction="#setIPandPort" text="Set URI" />
+      <Button fx:id="button_clear_console" layoutX="653.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearConsole" prefHeight="25.0" prefWidth="93.0" text="Clear Console" />
+      <TextArea fx:id="text_area_console" layoutX="395.0" layoutY="40.0" prefHeight="648.0" prefWidth="351.0" />
+      <Label fx:id="label_output" layoutX="395.0" layoutY="14.0" text="Output:" />
+      <Label fx:id="label_overview" layoutX="14.0" layoutY="56.0" text="Overview">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_agents" layoutX="11.0" layoutY="126.0" text="Agents">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_agents_name" layoutX="36.0" layoutY="202.0" text="Agent's name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_mailbox" layoutX="77.0" layoutY="295.0" text="Mailbox:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_msgid" layoutX="118.0" layoutY="314.0" text="msgId" />
+      <Label fx:id="label_performative" layoutX="83.0" layoutY="343.0" text="performative" />
+      <Label fx:id="label_sender" layoutX="116.0" layoutY="373.0" text="sender" />
+      <Label fx:id="label_receiver" layoutX="109.0" layoutY="404.0" text="receiver" />
+      <Label fx:id="label_content" layoutX="109.0" layoutY="435.0" text="content" />
+      <Label fx:id="label_plans" layoutX="93.0" layoutY="494.0" text="Plans:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_command" layoutX="62.0" layoutY="625.0" text="Command:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_overview" layoutX="36.0" layoutY="88.0" mnemonicParsing="false" onAction="#getOverview" text="Overview" />
+      <Button fx:id="button_show_all_agents" layoutX="35.0" layoutY="162.0" mnemonicParsing="false" onAction="#getAllAgents" text="Show all agents" />
+      <TextField fx:id="text_field_agents_name" layoutX="136.0" layoutY="200.0" prefHeight="25.0" prefWidth="157.0" promptText="alice" />
+      <Label fx:id="label_options" layoutX="77.0" layoutY="236.0" text="Options:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_create" layoutX="139.0" layoutY="233.0" mnemonicParsing="false" onAction="#postAgent" text="Create" />
+      <Button fx:id="button_delete" layoutX="195.0" layoutY="233.0" mnemonicParsing="false" onAction="#deleteAgent" text="Delete" />
+      <Button fx:id="button_info" layoutX="251.0" layoutY="233.0" mnemonicParsing="false" onAction="#getAgent" prefHeight="25.0" prefWidth="51.0" text="Info" />
+      <Button fx:id="button_status" layoutX="307.0" layoutY="233.0" mnemonicParsing="false" onAction="#getAgentStatus" prefHeight="25.0" prefWidth="51.0" text="Status" />
+      <Button fx:id="button_log" layoutX="139.0" layoutY="262.0" mnemonicParsing="false" onAction="#getAgentLog" prefHeight="25.0" prefWidth="51.0" text="Log" />
+      <Button fx:id="button_bb" layoutX="195.0" layoutY="262.0" mnemonicParsing="false" onAction="#getAgentBB" prefHeight="25.0" prefWidth="51.0" text="BB" />
+      <Button fx:id="button_plans" layoutX="251.0" layoutY="262.0" mnemonicParsing="false" onAction="#getAgentPlans" prefHeight="25.0" prefWidth="51.0" text="Plans" />
+      <TextField fx:id="text_field_msgid" layoutX="155.0" layoutY="310.0" prefHeight="25.0" prefWidth="49.0" promptText="16" />
+      <TextField fx:id="text_field_performative" layoutX="155.0" layoutY="339.0" promptText="tell" text="tell" />
+      <TextField fx:id="text_field_sender" layoutX="155.0" layoutY="369.0" promptText="alice" />
+      <TextField fx:id="text_field_receiver" layoutX="155.0" layoutY="400.0" promptText="bob" />
+      <TextField fx:id="text_field_content" layoutX="155.0" layoutY="431.0" />
+      <Button fx:id="button_send_mailbox" layoutX="253.0" layoutY="455.0" mnemonicParsing="false" onAction="#postInbox" prefWidth="51.0" text="Send" />
+      <TextArea fx:id="text_area_plans" layoutX="139.0" layoutY="494.0" prefHeight="87.0" prefWidth="227.0" />
+      <Button fx:id="button_send_plans" layoutX="315.0" layoutY="581.0" mnemonicParsing="false" onAction="#postPlan" prefHeight="25.0" prefWidth="51.0" text="Send" />
+      <TextField fx:id="text_field_command" layoutX="140.0" layoutY="622.0" prefHeight="25.0" prefWidth="227.0" />
+      <Button fx:id="button_send_command" layoutX="316.0" layoutY="647.0" mnemonicParsing="false" onAction="#postCommand" prefHeight="25.0" prefWidth="51.0" text="Send" />
+   </children>
+</AnchorPane>
